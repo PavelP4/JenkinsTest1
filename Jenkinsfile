@@ -13,10 +13,9 @@ pipeline {
 	}
 	
 	stages {
-		stage('Checkout') { 
-			PrintStage()
-			
-			steps {			  
+		stage('Checkout') { 			
+			steps {
+				PrintStage()
 				echo 'step Git Checkout'			
 				checkout scm
 			}
