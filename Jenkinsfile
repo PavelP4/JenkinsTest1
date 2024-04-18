@@ -23,11 +23,27 @@ pipeline {
 		}
 		
 		stage('Build') { 
-			PrintStage()
+			when {
+				expression { 
+					return params.BUILD
+				}
+			}
+			steps {
+				PrintStage()
+				echo "step Build Solution"
+			}
 		}
 		
 		stage('Deploy') { 
-			PrintStage()
+			when {
+				expression { 
+					return params.DEPLOY
+				}
+			}
+			steps {
+				PrintStage()
+				echo "step Deploy Solution"
+			}
 		}
 	}
 	
